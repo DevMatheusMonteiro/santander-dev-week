@@ -10,9 +10,8 @@ public class Account {
     @Column(unique = true, nullable = false)
     private String number;
     private String agency;
-    @Column(precision = 2, scale = 13)
     private double balance;
-    @Column(precision = 2, scale = 13, name = "additional_limit")
+    @Column(name = "additional_limit")
     private double limit;
 
     public String getAgency() {

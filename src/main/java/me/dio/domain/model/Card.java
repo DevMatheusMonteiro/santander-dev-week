@@ -7,9 +7,8 @@ public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(unique = true, nullable = false)
     private String number;
-    @Column(precision = 2, scale = 13, name = "available_limit")
+    @Column(name = "available_limit")
     private double limit;
 
     public Integer getId() {
