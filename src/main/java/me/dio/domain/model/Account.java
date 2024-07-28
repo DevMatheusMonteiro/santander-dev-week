@@ -2,6 +2,8 @@ package me.dio.domain.model;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity(name = "tb_account")
 public class Account {
     @Id
@@ -10,9 +12,10 @@ public class Account {
     @Column(unique = true, nullable = false)
     private String number;
     private String agency;
-    private double balance;
-    @Column(name = "additional_limit")
-    private double limit;
+    @Column(precision = 13, scale = 2)
+    private BigDecimal balance;
+    @Column(name = "additional_limit", precision = 13, scale = 2)
+    private BigDecimal limit;
 
     public String getAgency() {
         return agency;
@@ -22,11 +25,11 @@ public class Account {
         this.agency = agency;
     }
 
-    public double getBalance() {
+    public BigDecimal getBalance() {
         return balance;
     }
 
-    public void setBalance(double balance) {
+    public void setBalance(BigDecimal balance) {
         this.balance = balance;
     }
 
@@ -38,11 +41,11 @@ public class Account {
         this.id = id;
     }
 
-    public double getLimit() {
+    public BigDecimal getLimit() {
         return limit;
     }
 
-    public void setLimit(double limit) {
+    public void setLimit(BigDecimal limit) {
         this.limit = limit;
     }
 
