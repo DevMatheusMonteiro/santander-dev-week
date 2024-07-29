@@ -9,7 +9,7 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(unique = true, nullable = false)
+    @Column(unique = true)
     private String number;
     private String agency;
     @Column(precision = 13, scale = 2)
